@@ -1,14 +1,29 @@
-package services;
+package core.services;
 
-import models.Joueur;
-import models.Partie;
+import core.models.Joueur;
+import core.models.Partie;
+import core.repositories.JoueurRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-public class PersistanceService {
+/**
+ * Service of Joueur Class
+ */
+@Service
+@Transactional
+public class JoueurServices {
+
+    // Load JPA Repository manager using Joueur Entity and JPA key word based persistence system
+    @Autowired
+    JoueurRepository joueurRepository;
+
     String sqlSelectAllPersons = "SELECT * FROM joueurs";
     String sqlGetAllPlayerFromGame = "select * from parties\n" +
             "inner join joueurs\n" +
@@ -16,7 +31,8 @@ public class PersistanceService {
     String connectionUrl = "jdbc:mysql://localhost:3306/jeuxstats?serverTimezone=UTC";
 
 
-    public void testJoueursTable(){
+    public List<Joueur> testJoueursTable(){
+        List<Joueur> joueurs = new ArrayList<>();
         try (
                 Connection conn = DriverManager.getConnection(connectionUrl, "root", "root");
                 PreparedStatement ps = conn.prepareStatement(sqlSelectAllPersons);
@@ -27,11 +43,13 @@ public class PersistanceService {
                 String name = rs.getString("Nom");
                 int age = rs.getInt("age");
 
-                    getPlayer(name,age);
+                    joueurs.add(getPlayer(name,age));
             }
         } catch (SQLException e) {
-            System.out.println("cannot connect to databse");
+            System.out.println("cannot connect to database");
         }
+
+        return  joueurs;
     }
 
 
@@ -91,4 +109,35 @@ public class PersistanceService {
 
         return partie;
     }
+
+
+
+    // Spring Application Server Service
+
+    /**
+     * Find Joueur by Id in database using JPA repository keyword
+     * @param id
+     * @return
+     */
+    public Optional<Joueur> findJoueurById(int id){
+        return joueurRepository.findById(id);
+    }
+
+    /**
+     * @return List of all Joueurs in database
+     */
+    public List<Joueur> findAll(){
+        return  joueurRepository.findAll();
+    }
+
+    /**
+     * Persist all Joueur in a List
+     * @param joueurList
+     */
+    public void addJoueurList(List<Joueur> joueurList){
+        for (Joueur j : joueurList){
+            joueurRepository.save(j);
+        }
+    }
+
 }

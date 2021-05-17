@@ -1,6 +1,16 @@
-package models;
+package core.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+/**
+ * Player model
+ */
+@Entity
 public class Joueur {
+    @Id
+    @GeneratedValue
     public  int id;
     private String nom;
     private int age;
