@@ -1,2 +1,10 @@
-models\Joueurs.class
-services\PersistanceService.class
+core\models\Partie.class
+core\repositories\PartieRepository.class
+core\repositories\JeuxRepository.class
+core\services\JoueurServices.class
+core\services\PartieServices.class
+core\repositories\JoueurRepository.class
+core\services\JeuxServices.class
+core\models\Joueur.class
+core\Launcher.class
+core\models\Jeux.class

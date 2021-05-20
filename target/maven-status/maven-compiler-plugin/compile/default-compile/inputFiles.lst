@@ -1,2 +1,10 @@
-D:\Photelecsim\Code\JdbcBox\src\main\java\services\PersistanceService.java
-D:\Photelecsim\Code\JdbcBox\src\main\java\models\Joueurs.java
+D:\Dev Public\wargamrecorder\src\main\java\core\Launcher.java
+D:\Dev Public\wargamrecorder\src\main\java\core\models\Partie.java
+D:\Dev Public\wargamrecorder\src\main\java\core\services\JeuxServices.java
+D:\Dev Public\wargamrecorder\src\main\java\core\repositories\JeuxRepository.java
+D:\Dev Public\wargamrecorder\src\main\java\core\models\Joueur.java
+D:\Dev Public\wargamrecorder\src\main\java\core\models\Jeux.java
+D:\Dev Public\wargamrecorder\src\main\java\core\services\JoueurServices.java
+D:\Dev Public\wargamrecorder\src\main\java\core\services\PartieServices.java
+D:\Dev Public\wargamrecorder\src\main\java\core\repositories\JoueurRepository.java
+D:\Dev Public\wargamrecorder\src\main\java\core\repositories\PartieRepository.java

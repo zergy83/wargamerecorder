@@ -7,6 +7,7 @@
     <groupId>pierre.m</groupId>
     <artifactId>WargameRecorder-core</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <name>Wargame Recorder Core</name>
     <url>www.wargamerecorder.com</url>
@@ -99,5 +100,16 @@
     </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.3</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
