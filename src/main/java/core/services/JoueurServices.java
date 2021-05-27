@@ -140,4 +140,13 @@ public class JoueurServices {
         }
     }
 
+
+    /**
+     * Simple find by Id Jouer in persistance layer
+     * @param id
+     * @return
+     */
+    public Optional<Joueur> findById(int id){
+        return joueurRepository.findById(id);
+    }
 }

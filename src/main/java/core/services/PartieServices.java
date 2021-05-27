@@ -17,6 +17,11 @@ public class PartieServices {
     PartieRepository partieRepository;
 
 
+    /**
+     * Find a "partie" in Persistance layer by its id
+     * @param id
+     * @return
+     */
     public Optional<Partie> findById(int id){
         return  partieRepository.findById(id);
     }

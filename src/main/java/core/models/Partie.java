@@ -1,19 +1,30 @@
 package core.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
 /**
  * Game model
  */
 @Entity
+@Table(name="partie")
 public class Partie {
     @Id
     @GeneratedValue
     private int id;
     private LocalDate date;
+    @Cascade(value= CascadeType.ALL)
+    @OneToOne
+    private Jeux jeux;
+/*    private Joueur joueur1;
+    private Joueur joueur2;
+    private Joueur joueur3;
+    private Joueur joueur4;
+    private Joueur joueur5;
+    private Joueur joueur6;*/
 
     public LocalDate getDate() {
         return date;
@@ -29,6 +40,13 @@ public class Partie {
 
     public void setId(int id) {
         this.id = id;
+    }
+    public Jeux getJeux() {
+        return jeux;
+    }
+
+    public void setJeux(Jeux jeux) {
+        this.jeux = jeux;
     }
 
     @Override

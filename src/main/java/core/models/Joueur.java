@@ -3,11 +3,13 @@ package core.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Player model
  */
 @Entity
+@Table(name = "joueur")
 public class Joueur {
     @Id
     @GeneratedValue
