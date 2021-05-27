@@ -11,10 +11,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.http.HttpRequest;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -23,6 +27,7 @@ import java.util.List;
  */
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "core.repositories")
+@ComponentScan(basePackages ="core")
 public class Launcher {
     /** Get beans of Spring Application Services*/
     @Autowired
@@ -47,7 +52,6 @@ public class Launcher {
     public CommandLineRunner test() {
         return (args) -> {
             System.out.println("WargameRecorder based Server Java is ready!");
-
            // initDatabase();
            // testCascadePersistance();
             System.out.println(joueurServices.findAll());
@@ -110,5 +114,21 @@ public class Launcher {
                         .allowedOrigins("http://localhost:4200");
             }
         };
+    }
+
+    //TODO finish method
+    private void sendHttpRequest() throws URISyntaxException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI("http://localhost:8080/Photelecsim-webservice"))
+                .GET()
+                .build();
+
+        /**
+        HttpResponse<String> response = HttpClient
+                .newBuilder()
+                .proxy(ProxySelector.getDefault())
+                .build()
+                .send(request, HttpResponse.BodyHandler.asString());
+         */
     }
 }

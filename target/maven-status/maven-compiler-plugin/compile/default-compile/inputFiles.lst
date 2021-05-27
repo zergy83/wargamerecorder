@@ -1,0 +1,13 @@
+D:\Dev Public\wargamrecorder\src\main\java\core\Launcher.java
+D:\Dev Public\wargamrecorder\src\main\java\core\models\Partie.java
+D:\Dev Public\wargamrecorder\src\main\java\webservice\controllers\JoueurControler.java
+D:\Dev Public\wargamrecorder\src\main\java\webservice\controllers\PartieControler.java
+D:\Dev Public\wargamrecorder\src\main\java\core\models\Joueur.java
+D:\Dev Public\wargamrecorder\src\main\java\core\models\Jeux.java
+D:\Dev Public\wargamrecorder\src\main\java\core\services\JoueurServices.java
+D:\Dev Public\wargamrecorder\src\main\java\core\repositories\PartieRepository.java
+D:\Dev Public\wargamrecorder\src\main\java\webservice\controllers\HomeControler.java
+D:\Dev Public\wargamrecorder\src\main\java\core\services\JeuxServices.java
+D:\Dev Public\wargamrecorder\src\main\java\core\repositories\JeuxRepository.java
+D:\Dev Public\wargamrecorder\src\main\java\core\services\PartieServices.java
+D:\Dev Public\wargamrecorder\src\main\java\core\repositories\JoueurRepository.java

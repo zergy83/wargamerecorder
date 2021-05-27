@@ -1,0 +1,14 @@
+core\Launcher$1.class
+webservice\controllers\PartieControler.class
+core\repositories\JeuxRepository.class
+core\services\JoueurServices.class
+core\services\PartieServices.class
+core\services\JeuxServices.class
+core\models\Partie.class
+core\repositories\PartieRepository.class
+webservice\controllers\HomeControler.class
+webservice\controllers\JoueurControler.class
+core\repositories\JoueurRepository.class
+core\models\Joueur.class
+core\Launcher.class
+core\models\Jeux.class
